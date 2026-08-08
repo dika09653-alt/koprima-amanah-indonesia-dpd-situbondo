@@ -30,7 +30,7 @@
             max-width: 950px;
             margin: 0 auto;
             background: #fff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
@@ -38,18 +38,18 @@
         .nav-tabs {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 15px;
             border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             flex-wrap: wrap;
         }
 
         .nav-btn {
             background: #e0e0e0;
             border: none;
-            padding: 8px 14px;
-            font-size: 13px;
+            padding: 8px 12px;
+            font-size: 12px;
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
@@ -71,40 +71,40 @@
 
         .header-title {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border-bottom: 2px solid #e8f5e9;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
         }
 
         .header-title h2 {
             color: var(--primary-color);
-            font-size: 18px;
+            font-size: 16px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .header-title h3 {
             color: #666;
-            font-size: 13px;
-            margin-top: 4px;
+            font-size: 12px;
+            margin-top: 3px;
             font-weight: 500;
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 10px;
         }
 
         @media (max-width: 768px) {
             .form-grid {
                 grid-template-columns: 1fr;
-                gap: 10px;
+                gap: 8px;
             }
         }
 
         .form-group {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .form-group.full {
@@ -119,10 +119,10 @@
 
         label {
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             font-weight: 600;
             color: #444;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .input-icon-wrapper {
@@ -134,13 +134,13 @@
         .input-icon-wrapper span {
             position: absolute;
             left: 10px;
-            font-size: 16px;
+            font-size: 15px;
             pointer-events: none;
         }
 
         input, select {
             width: 100%;
-            padding: 9px 10px 9px 35px;
+            padding: 8px 10px 8px 34px;
             border: 2px solid #c8e6c9;
             border-radius: 8px;
             font-size: 13px;
@@ -159,13 +159,13 @@
             background: var(--secondary-color);
             color: white;
             border: none;
-            padding: 11px 20px;
-            font-size: 14px;
+            padding: 10px 20px;
+            font-size: 13px;
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
             width: 100%;
-            margin-top: 12px;
+            margin-top: 10px;
             transition: 0.3s;
         }
 
@@ -177,35 +177,35 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .filter-box {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             align-items: center;
         }
 
         .filter-box input {
             padding: 6px 10px;
-            width: 160px;
+            width: 150px;
         }
 
         .action-btns {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 6px 12px;
+            padding: 6px 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .btn-edit { background: #ff9800; color: white; }
@@ -213,20 +213,20 @@
         .btn-print { background: #607d8b; color: white; }
         .btn-copy { background: #8e44ad; color: white; }
         .btn-clear { background: #d32f2f; color: white; }
-        .btn-earth { background: #00897b; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; font-size: 12px; border-radius: 4px;}
+        .btn-earth { background: #00897b; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; padding: 5px 8px; font-size: 11px; border-radius: 4px;}
 
         .row-action-panel {
             background: #fff3e0;
-            padding: 8px 12px;
+            padding: 8px 10px;
             border-radius: 6px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border: 1px dashed #ffb74d;
-            font-size: 13px;
+            font-size: 12px;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
 
         .table-responsive {
@@ -238,7 +238,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 5px;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         table, th, td {
@@ -248,9 +248,9 @@
         th {
             background-color: #000;
             color: #fff;
-            padding: 8px;
+            padding: 7px;
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         td {
@@ -317,7 +317,7 @@
             <input type="hidden" id="editIndex" value="">
             <div class="form-grid">
                 <div class="form-group">
-                    <label>&#128197; Tanggal (Ketik angka saja, misal: 1 lalu tekan spasi/Tab):</label>
+                    <label>&#128197; Tanggal (Ketik angka saja, misal: 1 lalu spasi/Tab):</label>
                     <div class="input-icon-wrapper">
                         <span>&#128198;</span>
                         <input type="text" id="tgl" placeholder="Contoh: 1 (Lalu spasi/Tab)" onblur="formatTanggalBlur(this)" required>
@@ -379,22 +379,22 @@
 
         <div class="control-panel no-print">
             <div class="filter-box">
-                <label for="filterNama" style="margin:0; font-size:13px;">&#128269; Filter Nama:</label>
+                <label for="filterNama" style="margin:0; font-size:12px;">&#128269; Filter:</label>
                 <input type="text" id="filterNama" placeholder="Cari nama..." onkeyup="filterTable()">
             </div>
             <div class="action-btns">
-                <button class="btn btn-copy" onclick="copyTableData()">&#128203; Copy Semua Data</button>
-                <button class="btn btn-copy" style="background:#0288d1;" onclick="copyPageData()">&#128196; Copy Per Halaman</button>
-                <button class="btn btn-clear" onclick="clearAllData()">&#128465; Kosongkan Tabel</button>
-                <button class="btn btn-print" onclick="printPage2()">&#128424; Cetak / Preview Hal 2</button>
+                <button class="btn btn-copy" onclick="copyTableData()">&#128203; Copy Semua</button>
+                <button class="btn btn-copy" style="background:#0288d1;" onclick="copyPageData()">&#128196; Copy Halaman</button>
+                <button class="btn btn-clear" onclick="clearAllData()">&#128465; Kosongkan</button>
+                <button class="btn btn-print" onclick="printPage2()">&#128424; Cetak</button>
             </div>
         </div>
 
         <div class="row-action-panel no-print" id="actionPanel">
-            <span id="selectedInfo" style="font-weight:600; color:#d84315;">&#128165; Klik tombol "Pilih" pada baris tabel di bawah untuk Edit atau Hapus data.</span>
+            <span id="selectedInfo" style="font-weight:600; color:#d84315;">&#128165; Klik baris tabel di bawah untuk Edit/Hapus.</span>
             <div id="actionButtons" style="display:none; gap:6px;">
-                <button class="btn btn-edit" onclick="editSelectedData()">&#9999;&#65039; Edit Data</button>
-                <button class="btn btn-delete" onclick="deleteSelectedData()">&#128465;&#65039; Hapus Data</button>
+                <button class="btn btn-edit" onclick="editSelectedData()">&#9999;&#65039; Edit</button>
+                <button class="btn btn-delete" onclick="deleteSelectedData()">&#128465;&#65039; Hapus</button>
             </div>
         </div>
 
@@ -402,7 +402,7 @@
             <table id="tabelPetani">
                 <thead>
                     <tr>
-                        <th class="no-print" style="width: 45px;">Pilih</th>
+                        <th class="no-print" style="width: 35px;">Pilih</th>
                         <th>No</th>
                         <th>TGL</th>
                         <th>NAMA PETANI</th>
@@ -427,15 +427,15 @@
         
         <div class="control-panel no-print">
             <div class="filter-box">
-                <label style="margin:0; font-size:13px; color:#00897b; font-weight:bold;">&#128205; Data Geospasial Per Petani</label>
+                <label style="margin:0; font-size:12px; color:#00897b; font-weight:bold;">&#128205; Geospasial Petani</label>
             </div>
             <div class="action-btns">
-                <button class="btn btn-print" onclick="printPage3()">&#128424; Cetak / Preview Hal 3</button>
+                <button class="btn btn-print" onclick="printPage3()">&#128424; Cetak Peta</button>
             </div>
         </div>
 
-        <div style="margin-bottom: 12px; font-size: 13px; color: #555; text-align: center;" class="no-print">
-            Daftar tautan Google Earth lahan masing-masing petani. Anda dapat langsung mengedit atau menghapus data link per baris tabel di bawah ini.
+        <div style="margin-bottom: 10px; font-size: 12px; color: #555; text-align: center;" class="no-print">
+            Daftar tautan Google Earth lahan masing-masing petani.
         </div>
         
         <div class="table-responsive">
@@ -446,7 +446,7 @@
                         <th>NAMA PETANI</th>
                         <th>ALAMAT</th>
                         <th>AKSI GOOGLE EARTH</th>
-                        <th class="no-print">AKSI PER KOLOM</th>
+                        <th class="no-print">AKSI</th>
                     </tr>
                 </thead>
                 <tbody id="tableBodyEarth">
@@ -460,7 +460,6 @@
     let dataPetani = JSON.parse(localStorage.getItem('dataPetani')) || [];
     let selectedIndex = null;
 
-    // Fungsi format tanggal otomatis saat kursor keluar dari kolom (onblur) agar tidak berantakan/menumpuk
     function formatTanggalBlur(input) {
         let val = input.value.trim();
         if (val.length > 0 && /^\d+$/.test(val)) {
@@ -585,17 +584,17 @@
         dataPetani.forEach((item, index) => {
             let earthLinkHTML = item.googleEarth ? 
                 `<a href="${item.googleEarth}" target="_blank" class="btn-earth">&#127758; Buka Google Earth</a>` : 
-                '<span style="color:#999; font-size:12px;">Link belum diisi</span>';
+                '<span style="color:#999; font-size:11px;">Belum ada link</span>';
             
             const row = `
                 <tr>
                     <td>${index + 1}</td>
-                    <td style="text-align: left; padding-left: 10px; font-weight: bold;">${item.namaPetani}</td>
-                    <td style="text-align: left; padding-left: 10px;">${item.alamat}</td>
+                    <td style="text-align: left; padding-left: 8px; font-weight: bold;">${item.namaPetani}</td>
+                    <td style="text-align: left; padding-left: 8px;">${item.alamat}</td>
                     <td>${earthLinkHTML}</td>
                     <td class="no-print">
-                        <button class="btn btn-edit" style="padding: 3px 8px; font-size: 11px;" onclick="editEarthRow(${index})">&#9999;&#65039; Edit</button>
-                        <button class="btn btn-delete" style="padding: 3px 8px; font-size: 11px;" onclick="deleteEarthRow(${index})">&#128465;&#65039; Hapus</button>
+                        <button class="btn btn-edit" style="padding: 3px 6px; font-size: 10px;" onclick="editEarthRow(${index})">&#9999;&#65039;</button>
+                        <button class="btn btn-delete" style="padding: 3px 6px; font-size: 10px;" onclick="deleteEarthRow(${index})">&#128465;&#65039;</button>
                     </td>
                 </tr>
             `;
@@ -614,13 +613,13 @@
         }
 
         let item = dataPetani[index];
-        document.getElementById('selectedInfo').innerHTML = `&#9989; Terpilih: <b>${item.namaPetani}</b> | HOK: <b>${item.hok}</b>`;
+        document.getElementById('selectedInfo').innerHTML = `&#9989; Terpilih: <b>${item.namaPetani}</b>`;
         document.getElementById('actionButtons').style.display = 'flex';
     }
 
     function resetSelection() {
         selectedIndex = null;
-        document.getElementById('selectedInfo').innerHTML = `&#128165; Klik tombol "Pilih" pada baris tabel di bawah untuk Edit atau Hapus data.`;
+        document.getElementById('selectedInfo').innerHTML = `&#128165; Klik baris tabel di bawah untuk Edit/Hapus.`;
         document.getElementById('actionButtons').style.display = 'none';
     }
 
@@ -655,7 +654,7 @@
         }
     }
 
-    function editEarthRow(index} {
+    function editEarthRow(index) {
         let item = dataPetani[index];
         let newLink = prompt(`Edit Link Google Earth untuk Petani: ${item.namaPetani}`, item.googleEarth || '');
         if (newLink !== null) {
@@ -668,11 +667,11 @@
 
     function deleteEarthRow(index) {
         let item = dataPetani[index];
-        if (confirm(`Apakah Anda yakin ingin menghapus link Google Earth untuk petani "${item.namaPetani}"?`)) {
+        if (confirm(`Hapus link Google Earth untuk "${item.namaPetani}"?`)) {
             dataPetani[index].googleEarth = "";
             localStorage.setItem('dataPetani', JSON.stringify(dataPetani));
             renderTableEarth();
-            alert('Link Google Earth berhasil dikosongkan/dihapus.');
+            alert('Link berhasil dihapus.');
         }
     }
 
@@ -681,7 +680,7 @@
             alert('Tabel sudah kosong.');
             return;
         }
-        if (confirm('PERINGATAN: Apakah Anda yakin ingin mengosongkan seluruh data pada tabel? Tindakan ini tidak dapat dibatalkan.')) {
+        if (confirm('PERINGATAN: Kosongkan seluruh data pada tabel?')) {
             dataPetani = [];
             localStorage.removeItem('dataPetani');
             renderTable();
@@ -711,7 +710,7 @@
 
     function copyTableData() {
         if (dataPetani.length === 0) {
-            alert('Tidak ada data untuk disalin!');
+            alert('Tidak ada data!');
             return;
         }
         
@@ -721,30 +720,30 @@
         });
 
         navigator.clipboard.writeText(textToCopy).then(() => {
-            alert('Seluruh data tabel berhasil disalin! Anda dapat menempelkannya (Paste) ke Excel.');
+            alert('Data berhasil disalin! Silakan Paste ke Excel.');
         }).catch(err => {
-            alert('Gagal menyalin data.');
+            alert('Gagal menyalin.');
         });
     }
 
     function copyPageData() {
         if (dataPetani.length === 0) {
-            alert('Tidak ada data untuk disalin!');
+            alert('Tidak ada data!');
             return;
         }
         
-        let pageSize = prompt("Masukkan jumlah baris per halaman cetak/copy (Contoh: 10 atau 15):", "10");
-        if (!pageSize || isNaN(pageSize) || pageSize <= 0) return;
+        let pageSize = prompt("Jumlah baris per halaman (contoh: 10):", "10");
+        if (!pageSize || isNaN(pageSize)) return;
         
-        let pageNum = prompt(`Total data ada ${dataPetani.length}. Masukkan nomor halaman yang ingin disalin (Contoh: 1):`, "1");
-        if (!pageNum || isNaN(pageNum) || pageNum <= 0) return;
+        let pageNum = prompt("Nomor halaman yang ingin disalin:", "1");
+        if (!pageNum || isNaN(pageNum)) return;
 
         let start = (parseInt(pageNum) - 1) * parseInt(pageSize);
         let end = start + parseInt(pageSize);
         let pageData = dataPetani.slice(start, end);
 
         if (pageData.length === 0) {
-            alert('Tidak ada data pada halaman tersebut!');
+            alert('Tidak ada data di halaman tersebut!');
             return;
         }
 
@@ -754,9 +753,7 @@
         });
 
         navigator.clipboard.writeText(textToCopy).then(() => {
-            alert(`Data Halaman ${pageNum} berhasil disalin! Silakan Paste ke Excel.`);
-        }).catch(err => {
-            alert('Gagal menyalin data per halaman.');
+            alert(`Data Halaman ${pageNum} berhasil disalin!`);
         });
     }
 
