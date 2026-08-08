@@ -30,7 +30,7 @@
             max-width: 950px;
             margin: 0 auto;
             background: #fff;
-            padding: 15px 20px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
@@ -39,9 +39,9 @@
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 12px;
             flex-wrap: wrap;
         }
 
@@ -71,36 +71,40 @@
 
         .header-title {
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e8f5e9;
+            padding-bottom: 12px;
         }
 
         .header-title h2 {
             color: var(--primary-color);
             font-size: 18px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .header-title h3 {
-            color: #555;
-            font-size: 14px;
-            margin-top: 3px;
+            color: #666;
+            font-size: 13px;
+            margin-top: 4px;
+            font-weight: 500;
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 12px;
         }
 
         @media (max-width: 768px) {
             .form-grid {
                 grid-template-columns: 1fr;
-                gap: 8px;
+                gap: 10px;
             }
         }
 
         .form-group {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .form-group.full {
@@ -115,7 +119,7 @@
 
         label {
             display: block;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             font-weight: 600;
             color: #444;
             font-size: 13px;
@@ -136,7 +140,7 @@
 
         input, select {
             width: 100%;
-            padding: 8px 10px 8px 35px;
+            padding: 9px 10px 9px 35px;
             border: 2px solid #c8e6c9;
             border-radius: 8px;
             font-size: 13px;
@@ -155,13 +159,13 @@
             background: var(--secondary-color);
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 15px;
+            padding: 11px 20px;
+            font-size: 14px;
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
             width: 100%;
-            margin-top: 8px;
+            margin-top: 12px;
             transition: 0.3s;
         }
 
@@ -302,20 +306,21 @@
         <button class="nav-btn" onclick="switchPage(3)">&#127758; 3. Google Earth Petani</button>
     </div>
 
+    <!-- HALAMAN 1: DASHBOARD INPUT -->
     <div id="page1" class="page active">
         <div class="header-title">
-            <h2>&#127807; DAFTAR CPCL PETANI KOPRIMA AMANAH INDONESIA &#127806;</h2>
-            <h3>DPD SITUBONDO &#127470;&#127469;</h3>
+            <h2>&#128221; Form Pendataan CPCL Petani</h2>
+            <h3>Koprima Amanah Indonesia - DPD Situbondo</h3>
         </div>
         
         <form id="petaniForm" onsubmit="saveData(event)">
             <input type="hidden" id="editIndex" value="">
             <div class="form-grid">
                 <div class="form-group">
-                    <label>&#128197; Tanggal (Ketik angka saja, misal: 1):</label>
+                    <label>&#128197; Tanggal (Ketik angka saja, misal: 1 lalu tekan spasi/Tab):</label>
                     <div class="input-icon-wrapper">
                         <span>&#128198;</span>
-                        <input type="text" id="tgl" placeholder="Ketik tanggal (Cth: 1)..." oninput="autoFormatTanggal(this)" required>
+                        <input type="text" id="tgl" placeholder="Contoh: 1 (Lalu spasi/Tab)" onblur="formatTanggalBlur(this)" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -365,6 +370,7 @@
         </form>
     </div>
 
+    <!-- HALAMAN 2: DATA TABEL & CETAK -->
     <div id="page2" class="page">
         <div class="header-title">
             <h2>DAFTAR CPCL PETANI KOPRIMA AMANAH INDONESIA</h2>
@@ -412,6 +418,7 @@
         </div>
     </div>
 
+    <!-- HALAMAN 3: GOOGLE EARTH -->
     <div id="page3" class="page">
         <div class="header-title">
             <h2>&#127758; PETA GOOGLE EARTH PER PETANI</h2>
@@ -453,8 +460,8 @@
     let dataPetani = JSON.parse(localStorage.getItem('dataPetani')) || [];
     let selectedIndex = null;
 
-    // Fungsi otomatis mengubah ketikan angka (misal: "1") menjadi "1 agustus 2026" otomatis saat diketik
-    function autoFormatTanggal(input) {
+    // Fungsi format tanggal otomatis saat kursor keluar dari kolom (onblur) agar tidak berantakan/menumpuk
+    function formatTanggalBlur(input) {
         let val = input.value.trim();
         if (val.length > 0 && /^\d+$/.test(val)) {
             const sekarang = new Date();
@@ -648,7 +655,7 @@
         }
     }
 
-    function editEarthRow(index) {
+    function editEarthRow(index} {
         let item = dataPetani[index];
         let newLink = prompt(`Edit Link Google Earth untuk Petani: ${item.namaPetani}`, item.googleEarth || '');
         if (newLink !== null) {
