@@ -321,10 +321,10 @@
             <input type="hidden" id="editIndex" value="">
             <div class="form-grid">
                 <div class="form-group">
-                    <label>&#128197; Tanggal (Bisa diketik bebas / otomatis):</label>
+                    <label>&#128197; Tanggal (Ketik bebas, misal: 1 agustus 2026):</label>
                     <div class="input-icon-wrapper">
                         <span>&#128198;</span>
-                        <input type="text" id="tgl" placeholder="Contoh: 1 agustus 2026" required>
+                        <input type="text" id="tgl" placeholder="Ketik tanggal di sini..." required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -470,16 +470,6 @@
     let dataPetani = JSON.parse(localStorage.getItem('dataPetani')) || [];
     let selectedIndex = null;
 
-    // Fungsi otomatis mengisi tanggal hari ini dalam format teks (misal: 9 agustus 2026)
-    function setOtomatisTanggal() {
-        const tglInput = document.getElementById('tgl');
-        if (tglInput && !tglInput.value) {
-            const sekarang = new Date();
-            const opsi = { day: 'numeric', month: 'long', year: 'numeric' };
-            tglInput.value = sekarang.toLocaleDateString('id-ID', opsi).toLowerCase();
-        }
-    }
-
     function switchPage(pageNum) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
@@ -487,9 +477,7 @@
         document.getElementById('page' + pageNum).classList.add('active');
         document.querySelectorAll('.nav-btn')[pageNum - 1].classList.add('active');
         
-        if(pageNum === 1) {
-            setOtomatisTanggal(); // Otomatis terisi saat pindah ke halaman input
-        } else if(pageNum === 2) {
+        if(pageNum === 2) {
             renderTable();
             resetSelection();
         } else if(pageNum === 3) {
@@ -551,7 +539,6 @@
 
         localStorage.setItem('dataPetani', JSON.stringify(dataPetani));
         document.getElementById('petaniForm').reset();
-        setOtomatisTanggal(); // Set ulang tanggal otomatis untuk entri berikutnya
         alert('Data berhasil disimpan!');
         switchPage(2);
     }
@@ -772,7 +759,6 @@
     }
 
     window.onload = function() {
-        setOtomatisTanggal();
         renderTable();
     }
 </script>
