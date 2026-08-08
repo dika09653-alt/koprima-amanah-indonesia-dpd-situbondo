@@ -727,7 +727,7 @@
 
     function copyPageData() {
         if (dataPetani.length === 0) {
-            alert('Tidak ada data untuk disalin!');
+            alert('Tidak tagihan data untuk disalin!');
             return;
         }
         
