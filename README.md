@@ -35,7 +35,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* Navigasi / Tab Halaman */
         .nav-tabs {
             display: flex;
             justify-content: center;
@@ -70,7 +69,6 @@
             display: block;
         }
 
-        /* Header Halaman Kompak 1 Layar HP */
         .header-title {
             text-align: center;
             margin-bottom: 12px;
@@ -88,7 +86,6 @@
             margin-top: 3px;
         }
 
-        /* Form Input Kompak */
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -124,7 +121,6 @@
             font-size: 13px;
         }
 
-        /* Karakter Desain Menarik pada Kolom Input */
         .input-icon-wrapper {
             position: relative;
             display: flex;
@@ -173,7 +169,6 @@
             background: var(--primary-color);
         }
 
-        /* Tabel & Kontrol */
         .control-panel {
             display: flex;
             justify-content: space-between;
@@ -216,7 +211,6 @@
         .btn-clear { background: #d32f2f; color: white; }
         .btn-earth { background: #00897b; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; font-size: 12px; border-radius: 4px;}
 
-        /* Panel Aksi Terpisah di Luar Tabel (Tidak Ikut Tercetak) */
         .row-action-panel {
             background: #fff3e0;
             padding: 8px 12px;
@@ -260,7 +254,6 @@
             text-align: center;
         }
 
-        /* Pengaturan Cetak Umum & Spesifik per Halaman */
         @media print {
             body {
                 background: white;
@@ -303,14 +296,12 @@
 <body>
 
 <div class="container">
-    <!-- TOMBOL NAVIGASI 3 HALAMAN -->
     <div class="nav-tabs no-print">
         <button class="nav-btn active" onclick="switchPage(1)">&#127806; 1. Input Petani</button>
         <button class="nav-btn" onclick="switchPage(2)">&#128203; 2. Data Tabel &amp; Cetak</button>
         <button class="nav-btn" onclick="switchPage(3)">&#127758; 3. Google Earth Petani</button>
     </div>
 
-    <!-- HALAMAN 1: DASHBOARD INPUT -->
     <div id="page1" class="page active">
         <div class="header-title">
             <h2>&#127807; DAFTAR CPCL PETANI KOPRIMA AMANAH INDONESIA &#127806;</h2>
@@ -321,10 +312,10 @@
             <input type="hidden" id="editIndex" value="">
             <div class="form-grid">
                 <div class="form-group">
-                    <label>&#128197; Tanggal (Ketik bebas, misal: 1 agustus 2026):</label>
+                    <label>&#128197; Tanggal (Ketik angka saja, misal: 1):</label>
                     <div class="input-icon-wrapper">
                         <span>&#128198;</span>
-                        <input type="text" id="tgl" placeholder="Ketik tanggal di sini..." required>
+                        <input type="text" id="tgl" placeholder="Ketik tanggal (Cth: 1)..." oninput="autoFormatTanggal(this)" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -374,14 +365,12 @@
         </form>
     </div>
 
-    <!-- HALAMAN 2: DATA TABEL & CETAK -->
     <div id="page2" class="page">
         <div class="header-title">
             <h2>DAFTAR CPCL PETANI KOPRIMA AMANAH INDONESIA</h2>
             <h3>DPD SITUBONDO</h3>
         </div>
 
-        <!-- Tombol Kontrol & Filter di Atas Tabel -->
         <div class="control-panel no-print">
             <div class="filter-box">
                 <label for="filterNama" style="margin:0; font-size:13px;">&#128269; Filter Nama:</label>
@@ -395,7 +384,6 @@
             </div>
         </div>
 
-        <!-- Panel Aksi Terpisah Khusus Hapus & Edit (TIDAK IKUT TERCETAK) -->
         <div class="row-action-panel no-print" id="actionPanel">
             <span id="selectedInfo" style="font-weight:600; color:#d84315;">&#128165; Klik tombol "Pilih" pada baris tabel di bawah untuk Edit atau Hapus data.</span>
             <div id="actionButtons" style="display:none; gap:6px;">
@@ -404,7 +392,6 @@
             </div>
         </div>
 
-        <!-- Tabel Data -->
         <div class="table-responsive">
             <table id="tabelPetani">
                 <thead>
@@ -420,20 +407,17 @@
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                    <!-- Data masuk otomatis lewat JavaScript -->
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- HALAMAN 3: GOOGLE EARTH PER PETANI -->
     <div id="page3" class="page">
         <div class="header-title">
             <h2>&#127758; PETA GOOGLE EARTH PER PETANI</h2>
             <h3>KOPRIMA AMANAH INDONESIA - DPD SITUBONDO</h3>
         </div>
         
-        <!-- Panel Kontrol Khusus Halaman 3 -->
         <div class="control-panel no-print">
             <div class="filter-box">
                 <label style="margin:0; font-size:13px; color:#00897b; font-weight:bold;">&#128205; Data Geospasial Per Petani</label>
@@ -459,7 +443,6 @@
                     </tr>
                 </thead>
                 <tbody id="tableBodyEarth">
-                    <!-- Data Earth masuk otomatis -->
                 </tbody>
             </table>
         </div>
@@ -469,6 +452,18 @@
 <script>
     let dataPetani = JSON.parse(localStorage.getItem('dataPetani')) || [];
     let selectedIndex = null;
+
+    // Fungsi otomatis mengubah ketikan angka (misal: "1") menjadi "1 agustus 2026" otomatis saat diketik
+    function autoFormatTanggal(input) {
+        let val = input.value.trim();
+        if (val.length > 0 && /^\d+$/.test(val)) {
+            const sekarang = new Date();
+            const tahun = sekarang.getFullYear();
+            const daftarBulan = ["januari", "februari", "maret", "april", "mei", "juni", "juli", "agustus", "september", "oktober", "november", "desember"];
+            const bulan = daftarBulan[sekarang.getMonth()];
+            input.value = `${val} ${bulan} ${tahun}`;
+        }
+    }
 
     function switchPage(pageNum) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
